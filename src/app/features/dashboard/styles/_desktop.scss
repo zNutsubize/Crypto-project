@@ -1,0 +1,9 @@
+@media screen and (min-width: $desktop-start) and (max-width: $desktop-end) {
+  .hero-wrapper {
+    padding: 0 100px 0 100px;
+  }
+
+  .features-wrapper {
+    padding: 0 100px;
+  }
+}

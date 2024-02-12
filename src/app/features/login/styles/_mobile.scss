@@ -1,0 +1,29 @@
+@media screen and (min-width: $mobile-start) and (max-width: $mobile-end) {
+  .wrapper {
+    margin-top: 20px;
+    margin-bottom: 50px;
+    flex-direction: column-reverse;
+
+    form {
+      width: 55%;
+
+      h1 {
+        margin-bottom: 50px;
+      }
+    }
+
+    .login-div {
+      p {
+        text-align: center;
+      }
+    }
+
+    .quote {
+      h1 {
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

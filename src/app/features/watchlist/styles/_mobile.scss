@@ -1,0 +1,13 @@
+@media screen and (min-width: $mobile-start) and (max-width: $mobile-end) {
+  .watchlist-wrapper {
+    padding: 0;
+
+    .watchlist-container {
+      tr {
+        .mobile-show {
+          display: none;
+        }
+      }
+    }
+  }
+}

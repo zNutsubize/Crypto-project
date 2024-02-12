@@ -1,0 +1,53 @@
+<div class="wrapper">
+  <ng-container *ngIf="!quizCompleted">
+    <div class="questions-container">
+      <h1>Crypto Quiz</h1>
+
+      <p>
+        Welcome <span>{{ quizTaker }}</span
+        >, wish you good luck!
+      </p>
+      <mat-progress-bar
+        mode="determinate"
+        value="{{ progress }}"
+      ></mat-progress-bar>
+
+      <div class="question">
+        <h1>
+          {{ questions[currentQuestion].questionText }}
+        </h1>
+
+        <p>Question {{ currentQuestion + 1 }} of {{ questions.length }}</p>
+
+        <p class="points">Points: {{ points }}</p>
+      </div>
+
+      <div class="answers">
+        <ul *ngFor="let answer of questions[currentQuestion].answers">
+          <li (click)="answersFn(currentQuestion + 1, answer)">
+            <div class="answer">{{ answer.text }}</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="buttons">
+        <button (click)="resetQuiz()">
+          <img src="../../../../../assets/restart.png" width="50" />
+        </button>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="quizCompleted">
+    <div class="completed-container">
+      <h1>
+        Congratulations!<br />
+        You have completed the <span>Crypto Quiz!</span>
+      </h1>
+      <p>You answered {{ questions.length }} Questions!</p>
+      <p class="correct-answer">Correct Answers: {{ correctAnswer }}</p>
+      <p class="wrong-answer">Wrong Answers: {{ incorrectAnswer }}</p>
+      <p>Your total score: {{ points }} Points!</p>
+    </div>
+  </ng-container>
+</div>

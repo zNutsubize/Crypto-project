@@ -1,0 +1,72 @@
+@media screen and (min-width: 1024px) and (max-width: 1920px) {
+  nav {
+    height: 60px;
+    background-color: #ffc23c;
+    line-height: 60px;
+    padding: 0 60px;
+
+    .right-nav {
+      display: none;
+    }
+
+    .quiz {
+      float: left;
+
+      li {
+        list-style: none;
+        display: inline-block;
+
+        a {
+          text-decoration: none;
+          color: #080112;
+          font-size: 18px;
+          font-weight: bold;
+          text-transform: uppercase;
+          padding: 0 20px;
+        }
+
+        a:hover {
+          color: white;
+        }
+      }
+    }
+
+    ul {
+      float: right;
+
+      .home-tablet-mobile {
+        display: none;
+      }
+
+      li {
+        list-style: none;
+        display: inline-block;
+
+        a {
+          text-decoration: none;
+          color: #080112;
+          font-size: 18px;
+          font-weight: bold;
+          text-transform: uppercase;
+          padding: 0 20px;
+        }
+
+        a:hover {
+          color: white;
+        }
+      }
+    }
+
+    .checkbtn {
+      box-sizing: border-box;
+      cursor: pointer;
+      float: right;
+      padding-top: 10px;
+      display: none;
+    }
+
+    #check {
+      display: none;
+    }
+  }
+}

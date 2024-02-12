@@ -1,0 +1,26 @@
+@media screen and (min-width: $mobile-start) and (max-width: $mobile-end) {
+  .converter-wrapper {
+    width: 100%;
+    .converter-div {
+      h1 {
+        font-size: 18px;
+        text-align: center;
+      }
+      width: 90%;
+      padding: 10px;
+
+      .currency-select {
+        .currency-select-child {
+          width: auto;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          select {
+            padding: 10px 20px;
+          }
+        }
+      }
+    }
+  }
+}

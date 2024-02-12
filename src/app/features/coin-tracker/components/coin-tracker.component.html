@@ -1,0 +1,102 @@
+<h1 class="title">Today's Cryptocurrency Prices by Market Cap</h1>
+
+<div class="tracker">
+  <mat-form-field appearance="standard">
+    <mat-label>Filter</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Ex. BTC"
+      #input
+    />
+  </mat-form-field>
+
+  <div class="mat-elevation-z8">
+    <table class="border-radius" mat-table [dataSource]="dataSource" matSort>
+      <!-- Coin Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Currency</th>
+        <td mat-cell *matCellDef="let row">
+          <div class="center">
+            <img [src]="row.image" width="40" alt="coin-image" />
+            <span>
+              {{ row.symbol | uppercase }}
+            </span>
+          </div>
+        </td>
+      </ng-container>
+
+      <!-- Price Column -->
+      <ng-container matColumnDef="current_price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+        <td mat-cell *matCellDef="let row">
+          {{ row.current_price | currency }}
+        </td>
+      </ng-container>
+
+      <!-- 24H Change Column -->
+      <ng-container matColumnDef="price_change_percentage_24h">
+        <th
+          class="mobile-show"
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+        >
+          24H Change
+        </th>
+        <td class="mobile-show" mat-cell *matCellDef="let row">
+          {{ row.price_change_percentage_24h }}%
+        </td>
+      </ng-container>
+
+      <!-- Market Cap Column -->
+      <ng-container matColumnDef="market_cap">
+        <th
+          class="mobile-show"
+          mat-header-cell
+          *matHeaderCellDef
+          mat-sort-header
+        >
+          Market Cap
+        </th>
+        <td class="mobile-show" mat-cell *matCellDef="let row">
+          {{ row.market_cap | currency }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="favorites">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+          Add to Watchlist
+        </th>
+        <td mat-cell *matCellDef="let row">
+          <button
+            class="favorite"
+            type="button"
+            (click)="
+              checkFavorite(row); addFavorite(row); disableMethod($event)
+            "
+            (click)="favorite && alert()"
+          >
+            Favorite
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">
+          No data matching the filter "{{ input.value }}"
+        </td>
+      </tr>
+    </table>
+
+    <mat-paginator
+      class="border-radius"
+      [pageSizeOptions]="[10, 25, 50]"
+      aria-label="Select page of users"
+    ></mat-paginator>
+  </div>
+</div>

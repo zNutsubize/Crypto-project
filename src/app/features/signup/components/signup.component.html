@@ -1,0 +1,67 @@
+<div class="wrapper">
+  <form [formGroup]="formGroup" class="center" (ngSubmit)="signUp()">
+    <h1>Create Account</h1>
+    <label for="email"><span>*</span> Email: </label>
+
+    <br />
+
+    <input type="email" formControlName="email" />
+
+    <br />
+    <label for="password"><span>*</span> Password: </label>
+
+    <input type="password" formControlName="password" />
+
+    <br />
+
+    <label for="confirm"><span>*</span> Confirm Password: </label>
+    <input id="confirm" type="password" formControlName="confirm" />
+
+    <br />
+    <label for="age"><span>*</span> Age: </label>
+    <input type="number" formControlName="age" />
+
+    <br />
+    <label for="phone"><span>*</span> Phone Number: </label>
+    <input id="phone" formControlName="phone" />
+
+    <br />
+    <label for="gender"><span>*</span> Gender: </label>
+
+    <br />
+    <select name="gender" class="gender" formControlName="gender">
+      <option disabled selected value>Select Gender</option>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select>
+
+    <br />
+
+    <input
+      type="checkbox"
+      (change)="checkbox($event)"
+      formControlName="checkbox"
+      class="checkbox"
+    />
+    I have read the agreement <br />
+
+    <div class="register-div">
+      <button [disabled]="agreementCheck && formGroup.invalid" type="submit">
+        Register
+      </button>
+      <p>If you already have an account, please</p>
+      <a routerLink="/login">Log In</a>
+    </div>
+  </form>
+
+  <div class="quote">
+    <h1>
+      If <span>crypto</span> succeeds, it's not because <br />
+      it empowers better people. <br />
+      It's because it <br />
+      empowers better institutions.
+      <br />
+      <span>- Vitalik Buterin</span>
+    </h1>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<nav>
+  <input type="checkbox" id="check" />
+  <label for="check" class="checkbtn">
+    <a><img src="../../../assets/menu.png" alt="menu" width="30" /></a>
+  </label>
+
+  <div class="quiz">
+    <li>
+      <a
+        class="left-nav"
+        *ngIf="checkLoginAppearance() | async"
+        routerLink="/quiz"
+        >Take a Quiz</a
+      >
+      <a class="left-nav" *ngIf="checkLogin() | async" routerLink="/dashboard"
+        >Home</a
+      >
+    </li>
+  </div>
+
+  <ul>
+    <ng-container *ngIf="checkLogin() | async">
+      <li class="home-tablet-mobile"><a routerLink="/dashboard">Home</a></li>
+      <li><a routerLink="/tracker">Cryptocurrencies</a></li>
+      <li><a routerLink="/watchlist">Watchlist</a></li>
+      <li><a routerLink="/converter">Converter</a></li>
+      <li><a routerLink="/quiz">Take a Quiz</a></li>
+    </ng-container>
+    <li>
+      <a *ngIf="checkLoginAppearance() | async" routerLink="/login">Login</a>
+    </li>
+    <li>
+      <a
+        class="right-nav"
+        *ngIf="checkLoginAppearance() | async"
+        routerLink="/quiz"
+        >Take a Quiz</a
+      >
+    </li>
+    <li>
+      <a *ngIf="checkLogin() | async" (click)="logOut()" routerLink="/login"
+        >Log Out</a
+      >
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,70 @@
+.watchlist-wrapper {
+  padding: 0px 150px;
+  border-radius: 10px;
+
+  table {
+    background-color: white;
+    width: 100%;
+    margin: 50px auto;
+    border: 1px solid;
+    border-collapse: collapse;
+    border-spacing: 10px 10px;
+    th {
+      height: 50px;
+      font-weight: 500;
+      vertical-align: middle;
+    }
+
+    td {
+      vertical-align: middle;
+
+      .middle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          margin-right: 10px;
+        }
+      }
+    }
+    tr {
+      height: 35px;
+      border-bottom: 1px solid rgb(202, 202, 202);
+      text-align: center;
+    }
+  }
+
+  .watchlist-container {
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .center {
+    margin: 30px auto;
+    text-align: center;
+  }
+
+  ::ng-deep ul > li:not(.active) > a {
+    background-color: rgb(255, 255, 255);
+    border-color: black;
+  }
+
+  ::ng-deep ul > li.disabled > span {
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-color: black;
+  }
+
+  button {
+    padding: 5px 10px;
+    background-color: #ffc23c;
+    border-radius: 5px;
+  }
+
+  button:active {
+    background-color: #bd850c;
+    transform: scale(0.9);
+  }
+}

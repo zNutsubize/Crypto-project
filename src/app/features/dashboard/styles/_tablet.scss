@@ -1,0 +1,36 @@
+@media screen and (min-width: $tablet-start) and (max-width: $tablet-end) {
+  .hero-wrapper {
+    padding: 0;
+    flex-direction: column;
+
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .features-wrapper {
+    padding: 0;
+
+    .features-div {
+      img {
+        width: 60px;
+      }
+    }
+
+    .feature {
+      width: 25%;
+
+      h1 {
+        font-size: 20px;
+      }
+
+      p {
+        font-size: 14px;
+      }
+    }
+
+    .features-title {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<div class="converter-wrapper">
+  <div class="converter-div">
+    <h1>Cryptocurrency Converter Calculator</h1>
+
+    <form [formGroup]="formGroup">
+      <div class="currency-select">
+        <input formControlName="value" type="number" value="1" />
+
+        <div class="currency-select-child">
+          <select formControlName="from">
+            <option
+              *ngFor="let coin of data | async"
+              [value]="coin.current_price"
+            >
+              {{ coin.symbol | uppercase }}
+            </option>
+          </select>
+          <img src="../../../../assets/exchange_icon.png" width="40" />
+          <select formControlName="to">
+            <option
+              selected
+              *ngFor="let coin of data | async"
+              [value]="coin.current_price"
+            >
+              {{ coin.symbol | uppercase }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <button (click)="getRate()">Convert</button>
+
+      <ng-container *ngIf="result">
+        <h1>{{ result }}</h1>
+      </ng-container>
+    </form>
+  </div>
+</div>

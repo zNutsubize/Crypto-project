@@ -1,0 +1,29 @@
+<div class="wrapper">
+  <div class="quiz-container">
+    <h1>Take a Crypto Quiz!</h1>
+    <p>This quiz contains 5 questions about cryptocurrency</p>
+    <h1>Rules:</h1>
+    <ul>
+      <li>
+        If you answer correctly, you get <span class="correct"> 1 point</span>
+      </li>
+      <li>
+        If you answer incorrectly, you lose
+        <span class="incorrect">1 point</span>
+      </li>
+      <li>If you refresh the page, quiz will reset</li>
+    </ul>
+
+    <label for="name">Enter your name to start the quiz!</label>
+
+    <input #quizTaker type="text" [(ngModel)]="name" />
+
+    <button
+      [disabled]="name === ''"
+      routerLink="/questions"
+      (click)="startQuiz()"
+    >
+      Start
+    </button>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <form [formGroup]="formGroup" class="center" (ngSubmit)="logIn()">
+    <h1>Please Log In</h1>
+
+    <label for="email"><span>*</span> Email: </label>
+
+    <input type="email" formControlName="email" />
+
+    <br />
+    <label for="password"><span>*</span> Password: </label>
+
+    <input type="password" formControlName="password" />
+
+    <br />
+
+    <div class="login-div">
+      <button class="login" type="submit">Login</button>
+
+      <p>If you don't have an account, please</p>
+      <a routerLink="/signup">Sign Up</a>
+    </div>
+  </form>
+
+  <div class="quote">
+    <h1>
+      We have elected to put our <br />
+      money and faith <br />in a mathematical <span>framework</span> <br />
+      that is free of <br />politics and human error.
+    </h1>
+  </div>
+</div>

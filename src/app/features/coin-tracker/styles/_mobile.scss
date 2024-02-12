@@ -1,0 +1,13 @@
+@media screen and (min-width: $mobile-start) and (max-width: $mobile-end) {
+  .title {
+    font-size: 20px;
+  }
+
+  .tracker {
+    padding: 0 5px;
+
+    .mobile-show {
+      display: none;
+    }
+  }
+}

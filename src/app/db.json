@@ -1,0 +1,36 @@
+{
+  "users": [
+    {
+      "email": "andria@gmail.com",
+      "password": "leonardo",
+      "phone": "+995598839052",
+      "age": 21,
+      "gender": "male",
+      "watchlist": [
+        "ethereum",
+        "tether",
+        "usd-coin",
+        "binancecoin"
+      ],
+      "id": 1
+    },
+    {
+      "email": "andriameladze@gmail.com",
+      "password": "leonardo",
+      "phone": "+995598839052",
+      "age": 25,
+      "gender": "male",
+      "watchlist": [],
+      "id": 2
+    },
+    {
+      "email": "giorgi@gmail.com",
+      "password": "Troleibusi1",
+      "phone": "+995599711175",
+      "age": 22,
+      "gender": "male",
+      "watchlist": [],
+      "id": 3
+    }
+  ]
+}

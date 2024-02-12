@@ -1,0 +1,25 @@
+@media screen and (min-width: $tablet-start) and (max-width: $tablet-end) {
+  .wrapper {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    flex-direction: column-reverse;
+
+    form {
+      h1 {
+        margin-bottom: 50px;
+      }
+    }
+
+    .login-div {
+      p {
+        text-align: center;
+      }
+    }
+
+    .quote {
+      h1 {
+        margin-bottom: 40px;
+      }
+    }
+  }
+}

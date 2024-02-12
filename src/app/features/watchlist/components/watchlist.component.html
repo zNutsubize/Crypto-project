@@ -1,0 +1,45 @@
+<div class="watchlist-wrapper">
+  <table class="watchlist-container">
+    <tr>
+      <th>Currency</th>
+      <th>Price</th>
+      <th class="mobile-show">24H Change</th>
+      <th class="mobile-show">Market Cap</th>
+      <th>Remove From Watchlist</th>
+    </tr>
+    <tr
+      *ngFor="
+        let index = index;
+        let coin;
+        of: favCoins$ | async | paginate: { itemsPerPage: 10, currentPage: p }
+      "
+    >
+      <td>
+        <div class="middle">
+          <img [src]="coin.image.small" width="40" alt="coin-image" />
+          <span>
+            {{ coin.symbol | uppercase }}
+          </span>
+        </div>
+      </td>
+      <td>
+        <span>{{ coin.market_data.current_price.usd | currency }}</span>
+      </td>
+      <td class="mobile-show">
+        <span>{{ coin.market_data.market_cap_change_percentage_24h }}%</span>
+      </td>
+      <td class="mobile-show">
+        <span>{{ coin.market_data.market_cap.usd | currency }}</span>
+      </td>
+
+      <td>
+        <button (click)="deleteFavorite(index)">Remove</button>
+      </td>
+    </tr>
+  </table>
+
+  <pagination-controls
+    class="center"
+    (pageChange)="p = $event"
+  ></pagination-controls>
+</div>

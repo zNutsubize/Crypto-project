@@ -1,0 +1,77 @@
+.title {
+  margin: 40px 0 40px 0;
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.tracker {
+  padding: 0px 150px;
+  margin-bottom: 40px;
+
+  table {
+    width: 100%;
+    background-color: #ffffff;
+  }
+
+  mat-label {
+    color: white;
+  }
+
+  mat-form-field {
+    input {
+      margin-top: 5px;
+      border-bottom: 2px solid white;
+    }
+  }
+
+  .mat-form-field {
+    label {
+      color: white;
+    }
+    font-size: 14px;
+    width: 100%;
+    margin-bottom: 20px;
+
+    input::placeholder {
+      color: white;
+    }
+  }
+
+  .mat-input-element {
+    color: white;
+  }
+
+  td,
+  th {
+    width: 25%;
+    color: black;
+    vertical-align: middle;
+
+    .center {
+      display: flex;
+      align-items: center;
+
+      img {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .border-radius {
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  button {
+    padding: 5px 10px;
+    background-color: #ffc23c;
+    border-radius: 5px;
+  }
+
+  button:active {
+    background-color: #bd850c;
+    transform: scale(0.9);
+  }
+}
